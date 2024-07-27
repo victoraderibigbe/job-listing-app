@@ -1,85 +1,35 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+  <NavBar />
+  <div class="text-center">
+    <div class="w-2/4 mx-auto px-56 m-10">
+      <h1>Get your dream job with Find Jobs.</h1>
     </div>
-  </header>
-
-  <RouterView />
+    <p class="font-medium">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit, sit amet consectetur ipdum
+      adipisicing.
+    </p>
+    <form
+      class="w-2/6 flex items-center justify-between mx-auto my-5 h-16 rounded-full gap-5 pl-2 shadow"
+    >
+      <icon-search></icon-search>
+      <input
+        type="text"
+        class="h-14 w-full border-none outline-none focus:ring-0 px-5"
+        placeholder="Job title, keywords..."
+      />
+      <button
+        type="button"
+        class="bg-dark-dark text-light rounded-full w-48 h-16 hover:bg-dark-soft transition-all hover:w-60"
+      >
+        Search
+      </button>
+    </form>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
+<script setup>
+import NavBar from '@/components/navbar/NavBar.vue'
+import IconSearch from './components/icons/IconSearch.vue'
+</script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
+<style></style>
